@@ -37,6 +37,6 @@ And if we did not specify the dependency of shared libraries properly, it become
  - Avoid using singleton pattern across shared libraries.
  - Avoid using other global objects in destructors of global objects.
  - If you have to, always to correctly specify the dependency of shared libraries.
-  - In this case, `sth` uses `logger`, so `sth` should be linked to `logger`
-  - Or order the shared libraries in the linking command, so that the dependency is the correct order that library is in front of those it depends on.
+    - In this case, `sth` uses `logger`, so `sth` should be linked to `logger`
+    - Or order the shared libraries in the linking command, so that the dependency is the correct order that library is in front of those it depends on.
 
