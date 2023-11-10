@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 3.5)
 
 project(MyProject)
 
-set(CMAKE_CXX_STANDARD 20)
-#enable LTO
-# set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
-
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   logger
@@ -15,6 +11,10 @@ include_directories(
 add_library(logger SHARED logger/logger.cpp)
 add_library(sth SHARED sth/sth.cpp)
 add_library(badguy SHARED badguy/badguy.cpp)
+
+# uncomment to see the difference
+# target_link_libraries(sth logger)
+# target_link_libraries(badguy logger sth)
 
 add_library(main OBJECT main.cpp)
 
